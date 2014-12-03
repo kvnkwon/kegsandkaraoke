@@ -4,14 +4,4 @@ $(document).ready(function () {
 
   $(".texture-form").backstretch("/img/footer_lodyas.png");
 
-  $('.delete-form').submit(function(event){
-    event.preventDefault();
-    var $target = $(event.target);
-
-    $.ajax({
-      type: "DELETE",
-      url: $target.attr("action")
-    }).done(function(response) {
-    })
-  });
 });
