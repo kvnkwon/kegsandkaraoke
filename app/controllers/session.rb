@@ -27,6 +27,7 @@ end
 # View a session
 get '/session/:id' do
   @session = Session.find_by(id: params[:id])
+  @reservations = Reservation.where(session_id: @session.id)
   if @session
     erb :'session/index'
   else

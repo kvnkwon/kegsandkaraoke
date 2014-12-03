@@ -1,16 +1,18 @@
-<div class="vertical-align-wrap">
-  <form action='/login' class="small-6 small-centered columns" method="POST">
-    <div class="row">
-      <div class="small-12 columns">
-        <%= display_error %>
-        <label>Username:
-          <input type="text" name="user[name]" />
-        </label>
-        <label>Password:
-          <input type="password" name="user[password]" />
-        </label>
-       <br><button type="submit" class="button expand" value="Submit">Login</button>
+<div class="texture-form">
+  <div class="vertical-align-wrap">
+    <form action='/login' class="small-6 small-centered columns" method="POST">
+      <div class="row">
+        <div class="small-12 columns">
+          <%= display_error %>
+          <label>Username:
+            <input type="text" name="user[name]" />
+          </label>
+          <label>Password:
+            <input type="password" name="user[password]" />
+          </label>
+         <br><button type="submit" class="button expand" value="Submit">Login</button>
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>

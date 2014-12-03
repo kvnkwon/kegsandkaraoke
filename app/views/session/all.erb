@@ -1,10 +1,10 @@
 <div class="fit-screen">
   <div class="vertical-align-wrap">
-    <div class="small-6 small-centered columns">
+    <div class="small-6 small-centered columns transparent-box">
       <div class="text-center">
-        <h2>Join the party!</h2>
+        <h2 class="reddish-font bounceIn"><i class="fa fa-child"></i> Join the party!</h2>
         <% @sessions.each do |session| %>
-          <a href="/session/<%= session.id %>"><%= session.name %></a> - <%= date_convert(session) %><br>
+          <a href="/session/<%= session.id %>" class="reddish-font"><strong><%= session.name %></strong></a><span class="white-font"> - <%= date_convert(session) %><br>
         <% end %>
       </div>
     </div>

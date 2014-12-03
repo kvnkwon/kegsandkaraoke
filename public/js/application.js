@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
-  $(".test-header").backstretch("http://www.wallpapers10.net/wp-content/uploads/2009/06/Michael_Jackson.jpg");
+  $(".landing-bg").backstretch("https://ununsplash.imgix.net/46/unsplash_52c319226cefb_1.JPG?q=75&fm=jpg&s=72d1a0318ab967123bb38fc959042808");
 
+  $(".texture-form").backstretch("../img/footer_lodyas.png");
 });
