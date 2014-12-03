@@ -27,5 +27,9 @@ end
 # View a session
 get '/session/:id' do
   @session = Session.find_by(id: params[:id])
-
+  if @session
+    erb :'session/index'
+  else
+    redirect('/sessions')
+  end
 end

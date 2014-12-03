@@ -1,10 +1,19 @@
-<%= display_error %>
-<form action='/signup' method="POST">
-  Username:<br>
-  <input type="text" name="user[name]"><br>
-  Password:<br>
-  <input type="password" name="user[password]"><br>
-  Password Confirmation:<br>
-  <input type="password" name="user[password_confirmation]"><br>
-  <input type="submit" value="Signup">
-</form>
+<div class="vertical-align-wrap">
+  <form action='/signup' class="small-6 small-centered columns" method="POST">
+    <div class="row">
+      <div class="small-12 columns">
+        <%= display_error %>
+        <label>Username:
+          <input type="text" name="user[name]" placeholder="has to be unique!" />
+        </label>
+        <label>Password:
+          <input type="password" name="user[password]" placeholder="do not share with anyone!" />
+        </label>
+        <label>Password Confirmation:
+          <input type="password" name="user[password_confirmation]" placeholder="confirm it!" />
+        </label>
+       <br><button type="submit" class="button expand" value="Submit">Signup</button>
+      </div>
+    </div>
+  </form>
+</div>

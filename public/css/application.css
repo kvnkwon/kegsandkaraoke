@@ -11,12 +11,16 @@
 }
 
 .transparent {
-  background:rgba(126, 126, 126, 0.5)
+  background:rgba(126, 126, 126, 0.5) !important;
+}
+
+.fit-screen {
+  height: 100vh;
+  width: 100%;
 }
 
 .vertical-align-wrap {
   margin-top: 18em;
-  margin-bottom: 18em;
 }
 
 .text-center {
@@ -25,4 +29,26 @@
 
 .create-space {
   margin-bottom: 2em;
+}
+
+.next-prompt-bg {
+  height: 100vh;
+  width: 100%;
+  background-color: #FF3838;
+}
+
+.next-prompt {
+  padding-top: 18em;
+  padding-bottom: 18em;
+  text-align: center;
+}
+
+.white-font {
+  color: #FFFFFF;
+}
+
+.session-menu {
+  height: 30vh;
+  width: 100%;
+  background-color: rgb(55, 55, 55);
 }
