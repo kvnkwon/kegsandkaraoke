@@ -1,11 +1,16 @@
 <div class="next-prompt-bg">
   <div class="next-prompt">
-    <h1 class="white-font bounceIn"><%= @session.reservations.first.user.name %> IS NEXT</h1>
-    <h3 class="white-font bounceIn">Singing: <a href="<%= @session.reservations.first.url %>" class="reddish-font"><%= @session.reservations.first.song_name %></a></h3>
-    <form action="/session/<%= @session.id %>/reservation/<%= @session.reservations.first.id %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <button type="submit" class="button alert radius"><i class="fa fa-hand-o-right"></i> Next!</button>
-    </form>
+    <% if @session.reservations.empty? %>
+      <h1 class="white-font bounceIn">NO ONE IS UP! START RESERVING!</h1>
+      <a href="/session/<%= @session.id %>/reservation/new" class="button success radius"><i class="fa fa-calendar-o"></i> Reserve</a>
+    <% else %>
+      <h1 class="white-font bounceIn"><%= @session.reservations.first.user.name %> IS NEXT</h1>
+      <h3 class="white-font bounceIn">Singing: <a href="<%= @session.reservations.first.url %>" class="reddish-font"><%= @session.reservations.first.song_name %></a></h3>
+      <form action="/session/<%= @session.id %>/reservation/<%= @session.reservations.first.id %>" method="POST" class="delete-form">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="button alert radius"><i class="fa fa-hand-o-right"></i> Next!</button>
+      </form>
+    <% end %>
   </div>
 </div>
 
