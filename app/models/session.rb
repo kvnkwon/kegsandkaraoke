@@ -1,3 +1,6 @@
 class Session < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :user
+  has_many :reservations
+
+  validates :name, presence: true, uniqueness: true
 end
