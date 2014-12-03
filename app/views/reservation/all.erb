@@ -1,0 +1,12 @@
+<div class="fit-screen">
+  <div class="vertical-align-wrap">
+    <div class="small-6 small-centered columns transparent-box">
+      <div class="text-center">
+        <h2 class="white-font">The Queue</h2>
+        <% @reservations.each do |reservation| %>
+          <span class="white-font"><%= reservation.user.name %> is singing: </span><a href="/session/<%= @session.id %>/reservation/<%= reservation.id %>" class="reddish-font"><strong><%= reservation.song_name %></strong></a><span class="white-font"> - <%= time_convert(reservation) %><br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

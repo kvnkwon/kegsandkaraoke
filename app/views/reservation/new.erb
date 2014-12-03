@@ -1,0 +1,18 @@
+<div class="texture-form">
+  <div class="vertical-align-wrap">
+    <form action='/session/<%= @session.id %>/reservation/new' class="small-6 small-centered columns" method="POST">
+      <div class="row">
+        <div class="small-12 columns">
+          <%= display_error %>
+          <label>Song title:
+            <input type="text" name="reservation[song_name]" placeholder="Song title" />
+          </label>
+          <label>Song url:
+            <input type="text" name="reservation[url]" placeholder="Link to youtube video with karaoke lyrics..if you need lyrics." />
+          </label>
+         <br><button type="submit" class="button expand" value="Submit">Reserve!</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
