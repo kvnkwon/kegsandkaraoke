@@ -3,7 +3,6 @@
   width: 100%;
 }
 
-
 .test-under {
   height: 30vh;
   width: 100%;
@@ -13,4 +12,17 @@
 
 .transparent {
   background:rgba(126, 126, 126, 0.5)
+}
+
+.vertical-align-wrap {
+  margin-top: 18em;
+  margin-bottom: 18em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.create-space {
+  margin-bottom: 2em;
 }

@@ -1,0 +1,10 @@
+<div class="vertical-align-wrap">
+  <div class="small-6 small-centered columns">
+    <div class="text-center create-space">
+      <h2>Join the party!</h2>
+      <% @sessions.each do |session| %>
+        <%= session.name %> - <%= date_convert(session) %><br>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -19,6 +19,7 @@ gem 'rake'
 gem 'shotgun'
 
 gem 'bcrypt'
+gem 'will_paginate-foundation'
 
 group :test do
   gem 'faker'
