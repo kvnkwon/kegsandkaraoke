@@ -1,0 +1,23 @@
+<div class="texture-form">
+  <div class="vertical-align-wrap">
+    <form action='/session/<%= @session.id %>/reservation/<%= @reservation.id %>/edit' class="small-6 small-centered columns" method="POST">
+      <div class="row">
+        <div class="small-12 columns">
+          <%= display_error %>
+          <input type="hidden" name="_method" value="PUT">
+          <label>Song title:
+            <input type="text" name="reservation[song_name]" value="<%= @reservation.song_name %>" />
+          </label>
+          <label>Song url:
+            <input type="text" name="reservation[url]" value="<%= @reservation.url %>" />
+          </label>
+         <br><button type="submit" class="button expand" value="Submit">Edit!</button><br>
+    </form>
+          <form action='/session/<%= @session.id %>/reservation/<%= @reservation.id %>' method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="button alert" value="Submit">Delete</button>
+          </form>
+        </div>
+      </div>
+  </div>
+</div>

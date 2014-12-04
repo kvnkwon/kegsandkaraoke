@@ -5,7 +5,7 @@
       <a href="/session/<%= @session.id %>/reservation/new" class="button success radius"><i class="fa fa-calendar-o"></i> Reserve</a>
     <% else %>
       <h1 class="white-font bounceIn"><%= @session.reservations.first.user.name %> IS NEXT</h1>
-      <h3 class="white-font bounceIn">Singing: <a href="<%= @session.reservations.first.url %>" class="reddish-font"><%= @session.reservations.first.song_name %></a></h3>
+      <h3 class="white-font bounceIn">Singing: <a href="<%= @session.reservations.first.url %>" class="reddish-font" target="_blank"><%= @session.reservations.first.song_name %></a></h3>
       <form action="/session/<%= @session.id %>/reservation/<%= @session.reservations.first.id %>" method="POST" class="delete-form">
         <input type="hidden" name="_method" value="DELETE">
         <button type="submit" class="button alert radius"><i class="fa fa-hand-o-right"></i> Next!</button>
@@ -21,6 +21,17 @@
     </div>
     <div class="small-6 columns">
       <a href="/session/<%= @session.id %>/reservations" class="button expand radius"><i class="fa fa-users"></i> View Queue</a>
+    </div>
+  </div>
+</div>
+
+<div class="session-complete small-8 small-centered columns">
+  <div class="row row-align">
+    <div class="small-6 small-centered columns">
+      <form action="/session/<%= @session.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="button expand radius red-btn"><i class="fa fa-trash"></i> End Session</button>
+      </form>
     </div>
   </div>
 </div>

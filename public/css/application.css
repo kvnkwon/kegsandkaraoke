@@ -85,3 +85,17 @@ h1, h2, h3, h4, h5, p, a {
   width: 100%;
   background-color: rgb(55, 55, 55);
 }
+
+.session-complete {
+  height: 18em;
+  width: 100%;
+  background-color: #272525;
+}
+
+.space-top {
+  margin-top: 25px;
+}
+
+.red-btn {
+  background-color: #E22222;
+}

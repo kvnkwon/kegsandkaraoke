@@ -4,8 +4,15 @@
       <div class="text-center">
         <h2 class="white-font">The Queue</h2>
         <% @reservations.each do |reservation| %>
-          <span class="white-font"><%= reservation.user.name %> is singing: </span><a href="/session/<%= @session.id %>/reservation/<%= reservation.id %>" class="reddish-font"><strong><%= reservation.song_name %></strong></a><span class="white-font"> - <%= time_convert(reservation) %><br>
+          <span>
+            <span class="white-font"><%= reservation.user.name %> is singing: </span><a href="<%= reservation.url %>" class="reddish-font" target="_blank"><strong><%= reservation.song_name %></strong></a><span class="white-font"> - <%= time_convert(reservation) %>
+            <% if current_user == reservation.user %>
+              <a href="/session/<%= @session.id %>/reservation/<%= reservation.id %>/edit">Edit</a>
+            <% end %>
+          </span><br>
         <% end %>
+        <br><a href="/session/<%= @session.id %>/reservation/new" class="button success radius space-top"><i class="fa fa-calendar-o"></i> Reserve</a>
+        <br><a href="/session/<%= @session.id %>">Return to session</a>
       </div>
     </div>
   </div>

@@ -34,3 +34,10 @@ get '/session/:id' do
     redirect('/sessions')
   end
 end
+
+# Delete a session
+delete '/session/:id' do
+  @session = Session.find_by(id: params[:id])
+  @session.destroy
+  redirect("/sessions")
+end

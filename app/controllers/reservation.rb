@@ -30,6 +30,27 @@ end
 
 
 # Edit a reservation
+get '/session/:session_id/reservation/:id/edit' do
+  @session = Session.find_by(id: params[:session_id])
+  @reservation = Reservation.find_by(id: params[:id])
+  if @reservation.user == current_user
+    erb :'reservation/edit'
+  else
+    redirect("/session/#{@session.id}/reservations")
+  end
+end
+
+put '/session/:session_id/reservation/:id/edit' do
+  session = Session.find_by(id: params[:session_id])
+  reservation = Reservation.find_by(id: params[:id])
+  if reservation.update(params[:reservation])
+    redirect("/session/#{session.id}/reservations")
+  else
+    session[:error] = reservation.errors.messages
+    redirect("/session/#{session.id}/reservation/#{reservation.id}/edit")
+  end
+end
+
 
 # Delete a reservation
 delete '/session/:session_id/reservation/:id' do
