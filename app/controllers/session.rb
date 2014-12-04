@@ -16,11 +16,12 @@ end
 
 post '/session/new' do
   user_session = current_user.sessions.create(params[:session])
-  if user_session.save
-    redirect("/session/#{user_session.id}")
+  p params
+
+  if request.xhr?
+    return user_session.name
   else
-    session[:error] = user_session.errors.messages
-    redirect('/session/new')
+    redirect to("/session/#{user_session.id}")
   end
 end
 

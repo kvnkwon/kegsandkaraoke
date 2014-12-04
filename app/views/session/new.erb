@@ -1,15 +1,17 @@
 <div class="texture-form">
   <div class="vertical-align-wrap">
-    <form action='/session/new' class="small-6 small-centered columns" method="POST">
+    <form action='/session/new' class="small-6 small-centered columns new-sesh" method="POST">
       <div class="row">
         <div class="small-12 columns">
           <%= display_error %>
           <label>Session name:
             <input type="text" name="session[name]" placeholder="Session name" />
           </label>
-         <br><button type="submit" class="button expand" value="Submit">Submit</button>
+         <br><button type="submit" class="button expand testing-submit" value="Submit">Submit</button>
         </div>
       </div>
     </form>
+    <ul class="testing">
+    </ul>
   </div>
 </div>
